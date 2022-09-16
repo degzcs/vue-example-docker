@@ -1,9 +1,6 @@
 <template>
-    <ul>
-        <li v-for="(email, index) in emails" :key="index">
-            {{email}}
-        </li>
-    </ul>
+    <h3 v-if="emails.length > 0">List of emails</h3>
+    <p> {{EmailsToString()}} </p>
 </template>
 
 <script>
@@ -14,18 +11,15 @@ export default {
             type: Array,
             required: true
         }
+    },
+    methods: {
+        EmailsToString() {
+            return this.emails.join(', ')
+        }
     }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    li {
-      display: inline-block;
-      margin: 0 10px;
-    }
 </style>
