@@ -1,5 +1,5 @@
 <template>
-    <h3 v-if="emails.length > 0">List of emails</h3>
+    <h3 v-if="emails.length">List of emails</h3>
     <p> {{EmailsToString()}} </p>
 </template>
 
