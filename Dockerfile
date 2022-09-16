@@ -1,13 +1,11 @@
 FROM node:alpine3.15
 
-RUN npm install -g http-server
 WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
 
-# copiar 'package.json' y 'package-lock.json' (si están disponibles)
-COPY package*.json ./
+RUN echo $PATH
+COPY package.json /app/package.json
 RUN npm install
-COPY . .
-RUN npm run build
+RUN npm install -g @vue/cli@latest
 
-EXPOSE 8080
-CMD [ "http-server", "dist" ]
+CMD ["npm", "run", "serve"]
