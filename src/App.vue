@@ -1,16 +1,29 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <EmailForm @email-submitted="UpdateEmails"/>
+  <EmailList :emails="emails"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import EmailList from './components/EmailList.vue'
+import EmailForm from './components/EmailForm.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
+    components: {
+        EmailForm,
+        EmailList
+    },
+    data() {
+        return {
+            emails: []
+        }
+    },
+    methods: {
+        UpdateEmails(email) {
+            this.emails.push(email)
+        }
+    }
 }
 </script>
 
