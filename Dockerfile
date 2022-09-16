@@ -7,5 +7,7 @@ RUN echo $PATH
 COPY package.json /app/package.json
 RUN npm install
 RUN npm install -g @vue/cli@latest
+RUN npm install -D vitest
+RUN npm install @vitejs/plugin-vue jsdom @vue/test-utils -D
 
 CMD ["npm", "run", "serve"]
