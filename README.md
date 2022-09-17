@@ -1,23 +1,27 @@
-# domains
+# Vue emails
 
 ## Project setup
 ```
-npm install
+docker-compose up --build
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+docker-compose run vue-dev npm run serve
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+docker-compose run vue-dev npm run build
 ```
 
 ### Lints and fixes files
 ```
-npm run lint
+docker-compose run vue-dev npm run lint
+```
+### Lints and fixes files
+```
+docker-compose run vue-dev npm run test
 ```
 
 ### Customize configuration

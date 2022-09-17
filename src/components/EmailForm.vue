@@ -1,7 +1,7 @@
 <template>
     <form class="email-form" @submit.prevent="onSubmit" novalidate="true">
         <h3>Email form</h3>
-        <p id="error" v-if="error">error: {{error}} </p>
+        <p id="error" v-show="error">error: {{error}} </p>
         <input id="email" v-model="email" type="email">
         <input class="button" type="submit" value="Submit">
     </form>
@@ -29,7 +29,7 @@ export default {
                 this.error = 'Please enter an email!'
                 return false
             } else if(!this.isTheRightFormat(this.email)){
-                this.error = 'Plese enter a valid email'
+                this.error = 'Please enter a valid email'
                 return false
             }
             return true
