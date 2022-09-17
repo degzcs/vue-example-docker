@@ -2,24 +2,15 @@
 
 ## Project setup
 ```
-docker-compose up --build
+docker-compose build
 ```
 
-### Compiles and hot-reloads for development
+### Development
 ```
-docker-compose run vue-dev npm run serve
-```
-
-### Compiles and minifies for production
-```
-docker-compose run vue-dev npm run build
+docker-compose up
 ```
 
-### Lints and fixes files
-```
-docker-compose run vue-dev npm run lint
-```
-### Lints and fixes files
+### Tests
 ```
 docker-compose run vue-dev npm run test
 ```
